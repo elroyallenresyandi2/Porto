@@ -1,0 +1,111 @@
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portfolio — Bring Your Stories</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=League+Gothic&family=Libre+Caslon+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Splash (logo) -->
+  <div id="splash">
+    <div class="splash-inner">
+      <div class="splash-logo">MY<span>LOGO</span></div>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-pill">
+      <a href="#home" class="nav-link">HOME</a>
+      <a href="#gallery" class="nav-link">GALLERY</a>
+      <a href="#about" class="nav-link">ABOUT</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="home" class="hero">
+    <div class="hero-inner">
+      <!-- big left column text -->
+      <div class="hero-left">
+        <h1 class="hero-head-left">
+          <span>BRING</span>
+          <span>YOUR STORIES</span>
+        </h1>
+        <div class="hero-subtiny">TO LIFE</div>
+      </div>
+
+      <!-- center person -->
+      <div class="hero-center">
+        <!-- replace hero-person.png with your cutout image file -->
+        <img src="jir_belakang-removebg-preview.png" alt="subject" class="hero-person" />
+      </div>
+
+      <!-- right big text -->
+      <div class="hero-right">
+        <h2 class="hero-head-right">
+          <span>WITH</span>
+          <span>STUNNING</span>
+        </h2>
+        <div class="hero-sub-visuals">VISUALS</div>
+        <div class="barcode">|||||||||||||||||</div>
+        <div class="barcode-sub">YOUR STORY BEGINS HERE</div>
+      </div>
+    </div>
+
+    <!-- footer whisper text at bottom -->
+    <div class="hero-footer">
+      <div class="footer-word">STAY</div>
+      <div class="footer-word">LOW</div>
+      <div class="footer-word">ON</div>
+      <div class="footer-word">YOUR</div>
+      <div class="footer-word">SELF</div>
+      <div class="footer-word">TODAY</div>
+    </div>
+
+  <!-- Projects (simple) -->
+  <section id="projects" class="section projects">
+    <div class="container">
+      <h3>Selected Projects</h3>
+      <div class="grid">
+        <div class="card">Project A</div>
+        <div class="card">Project B</div>
+        <div class="card">Project C</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery (horizontal scroll + right-click drag) -->
+  <section id="gallery" class="section gallery">
+    <div class="container">
+      <h3>Gallery</h3>
+      <div class="gallery-scroll" id="galleryScroll" tabindex="0" aria-label="Gallery scrollable">
+        <div class="gallery-item">Image 1</div>
+        <div class="gallery-item">Image 2</div>
+        <div class="gallery-item">Image 3</div>
+        <div class="gallery-item">Image 4</div>
+        <div class="gallery-item">Image 5</div>
+      </div>
+      <p class="muted">You can scroll with mouse wheel or hold RIGHT CLICK and drag to scroll.</p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="about" class="section contact">
+    <div class="container">
+      <h3>Contact</h3>
+      <form class="contact-form" aria-label="Contact form">
+        <input type="text" placeholder="Name" required />
+        <input type="email" placeholder="Email" required />
+        <textarea placeholder="Message" rows="5" required></textarea>
+        <button class="btn-primary" type="submit" aria-label="Send message" data-hover="Send message">Send</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Hover tooltip element (single reusable) -->
+  <div id="hover-card" role="tooltip" aria-hidden="true"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

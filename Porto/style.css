@@ -1,0 +1,174 @@
+/* -------------------------
+   Variables & base reset
+   ------------------------- */
+:root{
+  --bg-left: #5b2228;   /* maroon */
+  --bg-right: #2f2f31;  /* dark gray */
+  --accent: #e63a44;    /* bold red */
+  --text: #f6f6f6;
+  --muted: rgba(255,255,255,0.35);
+  --container: 1200px;
+  --radius: 12px;
+}
+
+/* reset */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  font-size:16px; line-height:1.5;
+  color:var(--text);
+  background: linear-gradient(90deg,var(--bg-left) 0%, var(--bg-right) 100%);
+  overflow-x:hidden;
+}
+
+/* splash */
+#splash{
+  position:fixed; inset:0; z-index:9999;
+  display:flex; align-items:center; justify-content:center;
+  background: linear-gradient(90deg,var(--bg-left) 0%, var(--bg-right) 100%);
+}
+.splash-inner .splash-logo{
+  color:var(--text); font-weight:700; font-size:28px;
+  background: rgba(0,0,0,0.15); padding:18px 28px; border-radius:40px;
+  transform-origin:center;
+  animation: splashPulse 1.6s ease-in-out forwards;
+}
+@keyframes splashPulse{
+  0% { opacity:0; transform: scale(.8) rotate(-3deg) }
+  60% { opacity:1; transform: scale(1.05) rotate(4deg) }
+  100% { transform: scale(1) rotate(0deg) }
+}
+
+/* nav */
+.nav{ position:fixed; top:20px; left:50%; transform:translateX(-50%); z-index:60; width:100%; display:flex; justify-content:center; pointer-events:none }
+.nav-pill{ background:rgba(255,255,255,0.08); padding:10px 26px; border-radius:26px; display:flex; gap:36px; pointer-events:auto; backdrop-filter: blur(6px) }
+.nav-link{ color:var(--text); text-decoration:none; font-weight:700; letter-spacing:1px; padding:6px 8px; font-family: "Oswald", sans-serif; font-size:14px }
+
+/* Teks besar kiri (League Gothic) */
+.hero-head-left {
+  font-family: "League Gothic", sans-serif;
+  color: var(--accent);
+  font-size: 120px;
+  line-height: .85;
+  letter-spacing: -2px;
+  font-weight: 400;
+  margin: 0;
+}
+.hero-head-left span { display:block }
+
+/* Teks kecil "TO LIFE" (Libre Caslon Display) */
+.hero-subtiny {
+  font-family: "Libre Caslon Display", serif;
+  color: rgba(255,255,255,0.14);
+  margin-top: 6px;
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+/* Teks besar kanan (League Gothic) */
+.hero-head-right {
+  font-family: "League Gothic", sans-serif;
+  color: var(--accent);
+  font-size: 96px;
+  line-height: .85;
+  letter-spacing: -2px;
+  font-weight: 400;
+  margin: 0;
+}
+
+/* Teks "VISUALS" (Libre Caslon Display) */
+.hero-sub-visuals {
+  font-family: "Libre Caslon Display", serif;
+  color: rgba(255,255,255,0.18);
+  margin-top: 8px;
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+/* center person image */
+.hero-center{ display:flex; align-items:center; justify-content:center; z-index:30 }
+.hero-person{
+  width:520px; max-width:52vw; height:auto; object-fit:contain; display:block;
+  filter: drop-shadow(0 10px 30px rgba(0,0,0,0.6));
+  transform: translateY(8px);
+}
+
+/* right big text */
+.hero-right{ text-align:left; align-self:end; padding-right:10px }
+.hero-head-right{
+  font-family:"Oswald", sans-serif;
+  color:var(--accent);
+  font-size:96px; line-height:.85; letter-spacing:-2px; font-weight:700; margin:0;
+}
+.hero-sub-visuals{ color: rgba(255,255,255,0.18); margin-top:8px; font-size:22px; font-weight:500 }
+.barcode{ color:var(--accent); margin-top:14px; letter-spacing:6px; font-size:18px; opacity:0.95 }
+.barcode-sub{ color: rgba(255,255,255,0.14); margin-top:6px; font-size:12px }
+
+/* footer words bottom */
+.hero-footer{ position:absolute; left:40px; right:40px; bottom:6px; display:flex; justify-content:space-between; padding:0 40px; pointer-events:none }
+.footer-word{ color: rgba(255,255,255,0.08); font-weight:600; letter-spacing:2px }
+
+/* action buttons row (center bottom) */
+.hero-actions{ position:absolute; left:50%; transform:translateX(-50%); bottom:28px; display:flex; gap:12px; z-index:40 }
+.action-btn{
+  background: rgba(255,255,255,0.08); color:var(--text); border:1px solid rgba(255,255,255,0.06);
+  padding:10px 22px; border-radius:999px; font-weight:700; cursor:pointer; position:relative;
+  font-family: "Oswald", sans-serif; letter-spacing:1px;
+}
+
+/* Hover-card styling handled by JS - tooltip element absolute */
+#hover-card{
+  position:fixed; z-index:2000; pointer-events:none; padding:8px 12px; border-radius:10px;
+  background:#fff; color:#111; font-weight:600; box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  opacity:0; transform: translateY(6px) scale(.98); transition: opacity .18s, transform .18s;
+  white-space:nowrap; font-size:14px;
+}
+
+/* Sections (projects, gallery, contact) */
+.section{ padding:60px 24px; background: transparent }
+.container{ max-width:var(--container); margin:0 auto }
+
+/* Projects grid */
+.projects .grid{ display:grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap:20px; margin-top:18px }
+.card{ background: rgba(255,255,255,0.03); padding:28px; border-radius:12px; box-shadow: 0 6px 18px rgba(0,0,0,0.25) }
+
+/* Gallery scroll (vertical intended like image? we keep horizontal but allow wheel & right-drag scroll) */
+.gallery-scroll{
+  display:flex; gap:18px; overflow-x:auto; padding:18px 6px; scroll-behavior: smooth; cursor: grab;
+}
+.gallery-item{
+  min-width:260px; height:180px; background: rgba(255,255,255,0.04); border-radius:12px; display:flex; align-items:center; justify-content:center; font-weight:700;
+}
+
+/* contact form */
+.contact-form{ display:flex; flex-direction:column; gap:12px; max-width:560px; margin-top:14px }
+.contact-form input, .contact-form textarea{
+  padding:12px; border-radius:10px; border:1px solid rgba(255,255,255,0.06); background:rgba(0,0,0,0.28); color:var(--text)
+}
+.btn-primary{ background:var(--accent); color:white; padding:12px 18px; border-radius:10px; border:none; font-weight:700; cursor:pointer }
+
+/* responsive adjustments */
+@media (max-width:1100px){
+  .hero-inner{ grid-template-columns: 1fr 420px 1fr; gap:12px }
+  .hero-head-left{ font-size:88px }
+  .hero-head-right{ font-size:72px }
+}
+@media (max-width:860px){
+  .hero-inner{ grid-template-columns: 1fr; text-align:center }
+  .hero-left, .hero-right{ order:2 }
+  .hero-center{ order:1 }
+  .hero-head-left{ font-size:56px }
+  .hero-head-right{ font-size:48px }
+  .hero-person{ width:70%; max-width:320px }
+  .hero-footer{ display:none }
+  .nav{ top:10px }
+  .hero-subtiny{ display:none }
+}
+
+/* reduced motion */
+@media (prefers-reduced-motion: reduce){
+  *{ animation:none !important; transition:none !important }
+}
